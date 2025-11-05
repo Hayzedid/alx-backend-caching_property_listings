@@ -9,14 +9,14 @@ from .utils import get_all_properties, get_redis_cache_metrics
 def property_list(request):
     """
     View to return all properties with caching enabled for 15 minutes.
-    Uses low-level caching for the queryset.
+    Uses low-level caching for the queryset data.
     """
-    properties_list = get_all_properties()
+    properties_data = get_all_properties()
     
     return JsonResponse({
         'status': 'success',
-        'count': len(properties_list),
-        'properties': properties_list
+        'count': len(properties_data),
+        'data': properties_data
     })
 
 
